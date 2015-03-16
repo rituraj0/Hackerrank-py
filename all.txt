@@ -1,4 +1,5 @@
 1)Whats your name!
+
 	fx= input()
 	sc=input()
 	print( "Hello "+fx+" "+sc+"! You just delved into python.");
@@ -29,7 +30,9 @@
 	b=tup[0]
 	print(a)
 	print(b)
-	4)List Comprehensions
+
+
+4)List Comprehensions
 	x = input() + 1;
 	y = input() + 1;
 	z = input() + 1;
@@ -147,7 +150,10 @@
 		
 	print(ans);
 
+
+
 9)Map and Lambda Function
+
 
 	cube = lambda a:a*a*a
 
@@ -167,6 +173,7 @@
 
 	#print(ans);
 	print( list(map(cube,ans)))
+
 
 
 
@@ -193,6 +200,7 @@
 
 	#print(mx);
 	print(sec)
+
 
 
 11)Validate list of email address with filter
@@ -228,6 +236,7 @@
 
 12)REgex 1- Validating the phone number
 
+
 	import re
 
 	n  = int( input() );
@@ -240,6 +249,8 @@
        print("NO");
 
 
+
+
 13)Regex 2 - Validate a Roman Number
 
 	import re
@@ -248,7 +259,12 @@
 	else:
 		 print("False");
 
+
+
+
 14) XML 1 - Find the score
+
+
 
 	import xml.etree.ElementTree as etree
 
@@ -275,6 +291,8 @@
 		
 
 	#print(tree)
+
+
 
 15)XML2 - Find the maximum depth
 
@@ -303,7 +321,9 @@
 	print( deep(root)-1);
 
 
+
 16)Class 1 - Dealing with complex numbers
+
 
 	import math
 
@@ -379,6 +399,14 @@
 	AC.printmod();
 
 	BC.printmod();
+
+
+
+
+
+
+
+
 
 
 
