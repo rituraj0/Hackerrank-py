@@ -1,0 +1,476 @@
+1)Whats your name!
+	fx= input()
+	sc=input()
+	print( "Hello "+fx+" "+sc+"! You just delved into python.");
+
+2)Basic calculator
+
+	def go(a):
+		print("%.2f" % a);
+		return;
+
+	a=float( input() );
+	b=float( input() );
+	go(a+b);
+	go(a-b);
+	go(a*b);
+	go(a/b);
+	go(a//b);
+	#print( type(a) == type(b) );
+
+
+3)Interchange two numbers
+
+	tup=2,
+	a=input()
+	b=input()
+	tup=(a,b)
+	a=tup[1]
+	b=tup[0]
+	print(a)
+	print(b)
+	4)List Comprehensions
+	x = input() + 1;
+	y = input() + 1;
+	z = input() + 1;
+	n = input();
+	ls=[ [a,b,c] for a in range(x) for b in range(y) for c in range(z) if a+b+c!=n ]
+	print(ls)
+
+
+5)Nested list
+
+
+	# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+	inlist =  []
+
+	n = int(input())
+
+	num= []
+
+	for x in range(n):
+	  nami = input()
+	  mark = str(input())
+	  tp = []
+	  tp.append(nami);
+	  tp.append(mark)
+	  inlist.append(tp);
+	  num.append( float(mark))
+
+	num=sorted(num)
+	req = num[0]
+
+	for i in range(n):
+		if( num[i] != num[0]):
+		   req = num[i];
+		   break;
+			
+	inlist=sorted(inlist)
+
+	for i in range(n):
+		if(float(inlist[i][1]) == float( req )):
+		 print( inlist[i][0])
+
+
+6)Sets - Symmetric Difference
+
+	n = int( input() );
+
+	inp = input()
+
+	tp = inp.split();
+
+	A = list(map(int, tp))
+
+	#second set
+	m = int( input() );
+
+	inp = input()
+
+	tp = inp.split();
+
+	B = list(map(int, tp))
+
+	As=set(A)
+	Bs=set(B)
+
+	uni = As.union(Bs)
+
+	com = As.intersection(Bs)
+
+	ans = uni.difference(com)
+
+	ans = sorted(ans)
+
+	for x in ans:
+		print(x)
+
+
+7)Finding the percentage
+
+    
+	def go(a):
+		print("%.2f" % a);
+		return;
+		
+
+	marks ={}
+
+	n = int( input() );
+
+	for i in range(n):
+		tp = input();
+		#print(tp)
+		lis= tp.split();
+		mk = ( float(lis[1])+float(lis[2]) + float(lis[3]) )/3.000
+		marks[ str(lis[0])]=mk
+
+	x = str( input() )    
+
+	go( marks[x])
+
+
+
+8)Find a string
+
+	text= str(input())
+	pat = str( input() )
+	ans = 0
+
+	for i in range( 0, len(text) - len(pat) + 1 ):
+		mila = 1
+		for j in range( 0, len(pat) ):
+			if( text[i+j] != pat[j]):
+			   mila=0
+		ans = ans + mila
+		
+	print(ans);
+
+9)Map and Lambda Function
+
+	cube = lambda a:a*a*a
+
+	def fibo(n):
+		if(n==1):
+			return 0;
+		if( n==2):
+			return 1;
+		return fibo(n-1)+fibo(n-2);
+
+	n = int( input() );
+
+	ans =[]
+
+	for i in range(1,n+1):
+		ans.append( fibo(i));
+
+	#print(ans);
+	print( list(map(cube,ans)))
+
+
+
+10) Find second maximum number in a list
+
+
+	n= int( input() );
+
+	ans= []
+
+	mx = -200
+	tp = input()
+	xy =  tp.split();
+
+	inp = list( map(int,xy) )
+
+	for i in range(n):
+		mx=max(mx,inp[i]);
+		
+	sec = -200
+	for i in range(n):
+		if( inp[i] < mx):
+			sec=max(sec,inp[i]);
+
+	#print(mx);
+	print(sec)
+
+
+11)Validate list of email address with filter
+
+	#[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}
+	#{9,15}
+
+	#   [a-zA-Z0-9-_]+@[a-zA-Z0-9]+.[a-zA-Z0-9]{1,3}
+
+	import re
+
+	#xy = "ritu_-@gmail.com"
+
+	#if re.match(r"[a-zA-Z0-9-_]+@[a-zA-Z0-9]+.[a-zA-Z0-9]{1,3}", xy):
+	 #   print( "hello");
+		
+	n = int( input() )    
+
+	ans = []
+
+	for i in range(n):
+		x = str( input() );
+		ans.append(x);
+	  
+	#ans = list(filter(lambda x: x > 10 and x < 80, l))
+	ans = list(filter(lambda x: re.match(r"[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.\w{1,3}$", x), ans))
+	 #if ( re.match(r"[a-zA-Z0-9-_]+@[a-zA-Z0-9]+\.\w{1,3}$", x)):
+
+	ans = sorted(ans);
+	print(ans)
+
+
+
+12)REgex 1- Validating the phone number
+
+	import re
+
+	n  = int( input() );
+
+	for i in range(n):
+		curr= str( input());
+		if( re.match(r"[7-9][0-9]{9}$", curr) ): 
+			print("YES");
+		else:
+       print("NO");
+
+
+13)Regex 2 - Validate a Roman Number
+
+	import re
+	if ( re.match(r"^M{0,3}(C[DM]|D?C{0,3})(X[LC]|L?X{0,3})(I[VX]|V?I{0,3})$" , str( input() ) )):
+		 print("True");
+	else:
+		 print("False");
+
+14) XML 1 - Find the score
+
+	import xml.etree.ElementTree as etree
+
+	n = int( input() )
+
+	xml = ""
+
+	for i in range(n):
+		tp = str( input() )
+		xml = xml + tp;
+
+	#print(xml)
+
+	tree = etree.ElementTree(etree.fromstring(xml))
+
+	root = tree.getroot()
+
+	ans = 0;
+
+	for i in root.iter():
+		ans = ans + len( i.attrib);
+		
+	print(ans);
+		
+
+	#print(tree)
+
+15)XML2 - Find the maximum depth
+
+	import xml.etree.ElementTree as etree
+
+	def deep( tp):
+		ans =0 ;
+		for ch in tp:
+			ans = max( ans , deep(ch));
+		return (ans+1);
+
+	n = int( input() )
+
+	xml = ""
+
+	for i in range(n):
+		tp = str( input() )
+		xml = xml + tp;
+
+	#print(xml)
+
+	tree = etree.ElementTree(etree.fromstring(xml))
+
+	root = tree.getroot()
+
+	print( deep(root)-1);
+
+
+16)Class 1 - Dealing with complex numbers
+
+	import math
+
+	class complex:
+		def __init__(self , x , y):
+			self.x=x;
+			self.y=y;
+			return;
+		
+		def __add__(self , other):
+			ab=self.x + other.x;
+			bc=self.y + other.y;
+			return complex(ab,bc);
+		
+		def __sub__(self , other):
+			ab=self.x - other.x;
+			bc=self.y - other.y;
+			return complex(ab,bc);
+		
+		def __mul__(self , other):
+			ab = self.x*other.x - self.y*other.y ;
+			bc = self.x*other.y + self.y*other.x ;
+			return complex(ab,bc);
+		
+		def devide(self , other):
+			real = self.x*other.x + self.y*other.y ;
+			img =  -self.x*other.y + self.y*other.x ;
+			down =  other.x*other.x + other.y*other.y;
+			return complex(real/down, img/down);
+		
+		def printout(self):
+			if( self.y >= 0):
+			   if( self.y == 0):
+				   print("%.2f" % (self.x ) );
+			   elif( self.x == 0):
+				   print("%.2fi" % (self.y ) );
+			   else:               
+				   print("%.2f + %.2fi" % (self.x , self.y) );
+			else:
+			   self.y = -self.y
+			   if( self.x == 0):
+				   print("-%.2fi" % (self.y ) );
+			   else:               
+				   print("%.2f - %.2fi" % (self.x , self.y) );
+			return;
+		
+		def printmod(self):
+			up = math.sqrt( self.x*self.x + self.y*self.y )
+			print("%.2f " % up );
+			return;
+			
+			
+
+	AP = input()
+	BP = input()
+	ax = float( AP.split()[0] )
+	ay = float( AP.split()[1] )
+	bx = float( BP.split()[0] )
+	by = float( BP.split()[1] )
+
+	AC = complex(ax ,ay)
+	BC = complex(bx ,by)
+
+	(AC+BC).printout();
+
+	(AC-BC).printout();
+
+	(AC*BC).printout();
+
+	(AC.devide(BC)).printout();
+
+
+	AC.printmod();
+
+	BC.printmod();
+
+
+
+17) Class 2 - Find the torsional angle
+
+	import math;
+
+	class Point:
+		def __init__(self , x , y ,z):
+			self.x=x;
+			self.y=y;
+			self.z=z;
+			return;
+		
+		def __add__(self , other):
+			ab=self.x + other.x;
+			bc=self.y + other.y;
+			cd=self.z + other.z;
+			return Point(ab,bc,cd);
+		
+		def __sub__(self , other):
+			ab=self.x - other.x;
+			bc=self.y - other.y;
+			cd=self.z - other.z;
+			return Point(ab,bc,cd);
+		
+		def __mul__(self,other):
+			a1 = self.x;
+			a2 = self.y;
+			a3 = self.z;
+			b1 = other.x;
+			b2 = other.y;
+			b3 = other.z;        
+			return Point( a2*b3 - a3*b2 , -(a1*b3 - a3*b1) , a1*b2 - a2*b1);
+		
+		def dotp ( self , other):
+			a1 = self.x;
+			a2 = self.y;
+			a3 = self.z;
+			b1 = other.x;
+			b2 = other.y;
+			b3 = other.z;        
+			return (a1*b1 + a2*b2 + a3*b3);
+		
+		def mod ( self ):
+			a1 = self.x;
+			a2 = self.y;
+			a3 = self.z;
+			return math.sqrt( a1*a1 + a2*a2 + a3*a3 );
+		
+		
+		
+	tp = str( input() ) 
+	xyz = tp.split();
+	A = Point( float(xyz[0]) , float(xyz[1]) , float(xyz[2]) );
+
+	tp = str( input() ) 
+	xyz = tp.split();
+	B = Point( float(xyz[0]) , float(xyz[1]) , float(xyz[2]) );
+
+
+	tp = str( input() ) 
+	xyz = tp.split();
+	C = Point( float(xyz[0]) , float(xyz[1]) , float(xyz[2]) );
+
+	tp = str( input() ) 
+	xyz = tp.split();
+	D = Point( float(xyz[0]) , float(xyz[1]) , float(xyz[2]) );
+
+
+	AB = B - A;
+	BC = C - B ;
+	CD = D - C ;
+
+	X = AB * BC ;
+
+	Y = BC * CD ;
+
+	xm = X.mod();
+	ym = Y.mod();
+
+
+	up = X.dotp(Y);
+	down = xm*ym;
+
+	rad = math.acos(up/down) ;
+
+	ans = math.degrees(rad)
+
+	print("%.2f " % ans );
+			
+       
+
+
+
