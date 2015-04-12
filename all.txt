@@ -1,3 +1,16 @@
+Frequntly used:
+
+maxi = [ 0 for x in range(n)]
+ID = [ [-1 for x in range(27)] for x in range(27)]
+
+def input_long_array():
+    inp = str( raw_input() );
+    A = inp.split();
+    return list(map(long, A))
+
+
+
+
 1)Whats your name!
 
 	fx= input()
