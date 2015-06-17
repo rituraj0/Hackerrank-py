@@ -22,6 +22,8 @@ ord('a')
 'a'
 >>> chr(ord('a') + 3)
 
+//
+if __name__ == '__main__':
 
 
 1)Whats your name!
