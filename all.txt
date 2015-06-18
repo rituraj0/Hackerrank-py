@@ -25,6 +25,7 @@ ord('a')
 //
 if __name__ == '__main__':
 
+deep copy by new_list = list(old_list)
 
 1)Whats your name!
 
