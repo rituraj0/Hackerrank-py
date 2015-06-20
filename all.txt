@@ -27,6 +27,13 @@ if __name__ == '__main__':
 
 deep copy by new_list = list(old_list)
 
+
+//
+
+N, M = map(int, input().split())
+books_list = list(map(int, input().split()))
+
+
 1)Whats your name!
 
 	fx= input()
