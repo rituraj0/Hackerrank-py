@@ -48,6 +48,8 @@ def print_globvar():
 set_globvar_to_one()
 print_globvar()       # Prints 1
 
+http://stackoverflow.com/questions/20784758/global-variable-warning-in-python
+
 
 1)Whats your name!
 
